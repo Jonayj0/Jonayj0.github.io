@@ -1,187 +1,160 @@
 
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #bafae0;
-            color: #333;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap; /* Permite que los elementos pasen a otra línea */
-            gap: 10px; /* Añade separación entre los elementos */
-            margin: 0;
-        }
-        
-        nav ul li {
-            margin: 5px 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
-        }
-        
-        nav ul li a {
-            display: block; /* Hace que los enlaces ocupen todo el ancho del li */
-            padding: 0 15px;
-            background-color: #06bd92;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            text-align: center;
-            padding: 0;
-        }
-        
-        /* Ajustes para móviles */
-        @media (max-width: 767px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center; /* Centra los botones */
-                width: 100%;
-            }
-        
-            nav ul li {
-                width: 80%; /* Ajusta el ancho de los botones */
-                text-align: center;
-            }
-        
-            nav ul li a {
-                width: 100%;
-            }
-            .email{
-                min-width: 80%;
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-        @media (min-width: 768px) and (max-width: 1023px) {
-            nav ul {
-                justify-content: space-around;
-            }
-        
-            nav ul li {
-                margin: 5px;
-            }
-        
-            .email {
-                min-width: 70%;
-                flex-direction: column;
-                align-items: center;
-            }
-        
-            .projects {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-        
-            .project {
-                width: 45%; /* Para que los proyectos se vean en dos columnas */
-            }
-        }
-        @media (min-width: 1023px) and (max-width: 1080px) {
-            nav ul {
-                justify-content: space-around;
-            }
-        
-            nav ul li {
-                margin: 5px;
-            }
-        
-            .email {
-                min-width: 70%;
-                flex-direction: column;
-                align-items: center;
-            }
-        
-            .projects {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-        
-            .project {
-                width: 45%; /* Para que los proyectos se vean en dos columnas */
-            }
-        }
-        section {
-            padding: 40px;
-            text-align: center;
-        }
-        .project {
-            position: relative;
-            background: #fff;
-            padding: 20px;
-            margin: 20px auto;
-            width: 80%;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
-            background: #06bd92;
-            display: inline-block;
-            padding: 10px;
-            color: #fff;
-            margin: 5px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
-        }
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-        .email{
-            background: #ffffff;
-            padding: 20px;
-            margin: 20px auto;
-            width: 20%;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            color: #000000;
-        }
-        .project {
-            position: relative;
-            background: #fff;
-            padding: 20px;
-            box-shadow: 0px px 10px rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-            text-align: center;
-            width: 80%;
-            max-width: 600px;
-            overflow: hidden;
-        }
-        
-        .project img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.6; /* Ajusta la opacidad para mayor legibilidad */
-            z-index: 0;
-        }
-        
-        .project h3,
-        .project p {
-            position: relative;
-            z-index: 1;
-            color: #000000; /* Asegura que el texto sea legible */
-            font-size: 1.7rem;
-            text-shadow: 1px 2px 1px rgb(221, 223, 222, 0.9);
-        }
+        /* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #bafae0;
+    color: #333;
+}
+
+/* Header */
+.header {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+.header__title {
+    font-size: 2.5rem;
+}
+.header__subtitle {
+    font-size: 1.5rem;
+}
+
+/* Navegación */
+.nav__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0;
+}
+.nav__item {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+}
+.nav__link {
+    display: block;
+    padding: 10px 15px;
+    background-color: #06bd92;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Secciones */
+.section__title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Sobre mí */
+.about {
+    padding: 40px;
+    text-align: center;
+}
+
+/* Proyectos */
+.projects {
+    text-align: center;
+    padding: 40px;
+}
+.project {
+    background: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    max-width: 600px;
+}
+.project__title {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.project__description {
+    font-size: 1rem;
+}
+.project__image {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Habilidades */
+.skills {
+    text-align: center;
+    padding: 40px;
+}
+.skills__list {
+    list-style: none;
+    padding: 0;
+}
+.skills__item {
+    background: #06bd92;
+    display: inline-block;
+    padding: 10px;
+    color: #fff;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+/* Sección de Contacto */
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    padding: 40px;
+    min-height: 300px; /* Ajusta según necesites */
+    max-height: auto;
+}
+
+/* Contenedor de elementos de contacto */
+.contact__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Espacio entre elementos */
+    width: 100%;
+}
+
+/* Cada elemento de contacto tiene la misma altura */
+.contact__item {
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    color: #000;
+    text-align: center;
+    flex: 1; /* Hace que todos tengan el mismo tamaño */
+    min-width: 250px; /* Ajusta según la responsividad */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hace que todos tengan el mismo tamaño basado en el más grande */
+.contact__container .contact__item {
+    height: auto; /* Se adapta al contenido */
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .header__title { font-size: 2rem; }
+    .section__title { font-size: 1.8rem; }
+    .project { width: 90%; }
+}
