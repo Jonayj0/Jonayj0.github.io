@@ -4,38 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendario de Viaje a Islandia</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/97fb98f328.js" crossorigin="anonymous"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8; /* Light blue-gray background */
+            background-color: #f0f4f8;
         }
-        /* Custom styles for Lucide icons */
         .icon {
             display: inline-block;
             vertical-align: middle;
             margin-right: 0.5rem;
         }
         .aurora-icon {
-            color: #4CAF50; /* Green for aurora */
+            color: #4CAF50;
         }
         .activity-icon {
-            color: #2196F3; /* Blue for activities */
+            color: #2196F3;
         }
         .tip-icon {
-            color: #FFC107; /* Amber for tips */
+            color: #FFC107;
         }
-        /* Ensure images are responsive */
         img {
             max-width: 100%;
             height: auto;
-            border-radius: 0.75rem; /* Rounded corners for images */
+            border-radius: 0.75rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        /* Custom scrollbar for better aesthetics */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -50,262 +47,524 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #555;
         }
+        /* New: Responsive checkbox alignment */
+        .activity-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
     </style>
 </head>
 <body class="p-4 md:p-8">
 
-    <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl p-6 md:p-10 border border-gray-200">
+    <div class="w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto bg-white rounded-2xl shadow-xl p-6 md:p-10 lg:p-12 xl:p-16 border border-gray-200">
 
-        <!-- Header Section -->
         <header class="text-center mb-10">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4 tracking-tight">
-                <i data-lucide="calendar" class="icon text-indigo-600 w-10 h-10 inline-block align-middle"></i>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold text-gray-800 mb-4 tracking-tight">
+                <i data-lucide="calendar" class="icon text-indigo-600 w-8 h-8 sm:w-10 sm:h-10 xl:w-12 xl:h-12 inline-block align-middle"></i>
                 Calendario – Ruta Islandia
             </h1>
-            <p class="text-xl md:text-2xl text-gray-600 font-medium">
+            <p class="text-lg sm:text-xl md:text-2xl xl:text-3xl text-gray-600 font-medium">
                 12 al 21 de septiembre de 2025
             </p>
-            <p class="text-md text-gray-500 mt-2">
+            <p class="text-sm sm:text-base text-gray-500 mt-2">
                 ¡Prepárate para una aventura inolvidable en la tierra del fuego y el hielo!
             </p>
         </header>
 
-        <!-- Calendar Days Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-
-            <!-- Day 1 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-6 md:gap-8">
             <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl shadow-md border border-blue-100">
-                <h2 class="text-2xl font-bold text-indigo-700 mb-3 flex items-center">
-                    <span class="bg-indigo-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-lg">1</span>
+                <h2 class="text-xl sm:text-2xl font-bold text-indigo-700 mb-3 flex items-center">
+                    <span class="bg-indigo-500 text-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mr-3 text-base sm:text-lg">1</span>
                     Día 1: 12 septiembre
                 </h2>
-                <div class="text-gray-700 space-y-2">
-                    <p><i data-lucide="plane" class="icon activity-icon"></i> Llegada a Keflavík. Recogida del coche de alquiler.</p>
-                    <p><i data-lucide="map-pin" class="icon activity-icon"></i> Visitas si hay tiempo:</p>
-                    <ul class="list-disc list-inside ml-6 text-sm">
-                        <li><i data-lucide="construction" class="icon activity-icon text-sm"></i> Puente entre placas tectónicas</li>
-                        <li><i data-lucide="thermometer" class="icon activity-icon text-sm"></i> Gunnuhver</li>
-                        <li><i data-lucide="tower-control" class="icon activity-icon text-sm"></i> Reykjanesviti Lighthouse</li>
-                        <li><i data-lucide="waves" class="icon activity-icon text-sm"></i> Valahnúkamöl</li>
-                        <li><i data-lucide="mountain" class="icon activity-icon text-sm"></i> Fagradalsfjall (mirador o pequeño trail)</li>
+                <div class="text-gray-700 space-y-2 text-sm sm:text-base">
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="plane" class="icon activity-icon"></i> <span>Llegada a Keflavík. Recogida del coche de alquiler.</span>
+                    </p>
+                    <p class="activity-item">
+                        <i data-lucide="map-pin" class="icon activity-icon"></i><span>Visitas si hay tiempo:</span>
+                    </p>
+                    <ul class="list-none list-inside ml-4 sm:ml-6 text-xs sm:text-sm space-y-1">
+                        <li class="activity-item">
+                            <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                            <i data-lucide="construction" class="icon activity-icon text-sm"></i> <span>Puente entre placas tectónicas</span>
+                        </li>
+                        <li class="activity-item">
+                            <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                            <i data-lucide="thermometer" class="icon activity-icon text-sm"></i> <span>Gunnuhver</span>
+                        </li>
+                        <li class="activity-item">
+                            <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                            <i data-lucide="tower-control" class="icon activity-icon text-sm"></i> <span>Reykjanesviti Lighthouse</span>
+                        </li>
+                        <li class="activity-item">
+                            <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                            <i data-lucide="waves" class="icon activity-icon text-sm"></i> <span>Valahnúkamöl</span>
+                        </li>
+                        <li class="activity-item">
+                            <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                            <i data-lucide="mountain" class="icon activity-icon text-sm"></i> <span>Volcan Fagradalsfjall (mirador o pequeño trail)</span>
+                        </li>
                     </ul>
-                    <p><i data-lucide="hotel" class="icon activity-icon"></i> Check-in y cena grupal en Keflavík.</p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="shopping-bag" class="icon activity-icon"></i> <span>Bonus Compra en Keflavik</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="hotel" class="icon activity-icon"></i> <span>Check-in y cena grupal en Keflavík.</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="utensils" class="icon activity-icon"></i> <span>Cena grupal en Keflavík.</span>
+                    </p>
                 </div>
                 <div class="mt-4 p-3 bg-indigo-100 rounded-lg flex items-center">
-                    <i data-lucide="sparkles" class="icon aurora-icon w-6 h-6"></i>
-                    <p class="text-indigo-800 font-semibold text-sm">Auroras: Península de Reykjanes (zona poco iluminada y abierta al océano)</p>
+                    <i data-lucide="sparkles" class="icon aurora-icon w-5 h-5 sm:w-6 sm:h-6"></i>
+                    <p class="text-indigo-800 font-semibold text-xs sm:text-sm">Auroras: Faro (Gardur Old) o Península de Reykjanes (zona poco iluminada y abierta al océano)</p>
                 </div>
-                <img src="https://placehold.co/400x200/D1C4E9/4527A0?text=Península+de+Reykjanes" alt="Imagen de la Península de Reykjanes" class="mt-4 w-full h-48 object-cover rounded-lg">
+                <img src="https://placehold.co/400x200/D1C4E9/4527A0?text=Península+de+Reykjanes" alt="Imagen de la Península de Reykjanes" class="mt-4 w-full h-40 sm:h-48 object-cover rounded-lg">
             </div>
 
-            <!-- Day 2 -->
             <div class="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-xl shadow-md border border-green-100">
-                <h2 class="text-2xl font-bold text-teal-700 mb-3 flex items-center">
-                    <span class="bg-teal-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-lg">2</span>
+                <h2 class="text-xl sm:text-2xl font-bold text-teal-700 mb-3 flex items-center">
+                    <span class="bg-teal-500 text-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mr-3 text-base sm:text-lg">2</span>
                     Día 2: 13 septiembre
                 </h2>
-                <div class="text-gray-700 space-y-2">
-                    <p><i data-lucide="map" class="icon activity-icon"></i> Parque Nacional Þingvellir (2h)</p>
-                    <p><i data-lucide="droplet" class="icon activity-icon"></i> Cascada Bruarfoss (1h opcional)</p>
-                    <p><i data-lucide="cloud-lightning" class="icon activity-icon"></i> Área geotérmica Geysir (45 min)</p>
-                    <p><i data-lucide="droplet" class="icon activity-icon"></i>Cascada Gullfoss (1h)</p>
-                    <p><i data-lucide="sandwich" class="icon activity-icon"></i> Almuerzo en zona de Geysir</p>
-                    <p><i data-lucide="bath" class="icon activity-icon"></i> Secret Lagoon (1h)</p>
-                    <p><i data-lucide="circle" class="icon activity-icon"></i> Cráter Kerið (30 min)</p>
-                    <p><i data-lucide="bed" class="icon activity-icon"></i> Noche y cena en Selfoss.</p>
+                <div class="text-gray-700 space-y-2 text-sm sm:text-base">
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="map" class="icon activity-icon"></i> <span>Parque Nacional Þingvellir (2h)</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="droplet" class="icon activity-icon"></i> <span>Cascada Bruarfoss (1h opcional)</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="cloud-lightning" class="icon activity-icon"></i> <span>Área geotérmica Geysir (45 min)</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="droplet" class="icon activity-icon"></i><span>Cascada Gullfoss (1h)</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="sandwich" class="icon activity-icon"></i> <span>Almuerzo en zona de Geysir</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="bath" class="icon activity-icon"></i> <span>Secret Lagoon (1h)</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="circle" class="icon activity-icon"></i> <span>Cráter Kerið (30 min)</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="utensils" class="icon activity-icon"></i> <span>Cena en Selfoss.</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="bed" class="icon activity-icon"></i> <span>Noche Selfoss.</span>
+                    </p>
                 </div>
                 <div class="mt-4 p-3 bg-teal-100 rounded-lg flex items-center">
-                    <i data-lucide="sparkles" class="icon aurora-icon w-6 h-6"></i>
-                    <p class="text-teal-800 font-semibold text-sm">Auroras: Campos abiertos cerca de Selfoss o zona de Kerið</p>
+                    <i data-lucide="sparkles" class="icon aurora-icon w-5 h-5 sm:w-6 sm:h-6"></i>
+                    <p class="text-teal-800 font-semibold text-xs sm:text-sm">Auroras: Campos abiertos cerca de Selfoss o zona de Kerið</p>
                 </div>
-                <img src="https://placehold.co/400x200/C8E6C9/2E7D32?text=Círculo+Dorado" alt="Imagen del Círculo Dorado" class="mt-4 w-full h-48 object-cover rounded-lg">
+                <img src="https://placehold.co/400x200/C8E6C9/2E7D32?text=Círculo+Dorado" alt="Imagen del Círculo Dorado" class="mt-4 w-full h-40 sm:h-48 object-cover rounded-lg">
             </div>
 
-            <!-- Day 3 -->
             <div class="bg-gradient-to-br from-yellow-50 to-orange-50 p-6 rounded-xl shadow-md border border-yellow-100">
-                <h2 class="text-2xl font-bold text-orange-700 mb-3 flex items-center">
-                    <span class="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-lg">3</span>
+                <h2 class="text-xl sm:text-2xl font-bold text-orange-700 mb-3 flex items-center">
+                    <span class="bg-orange-500 text-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mr-3 text-base sm:text-lg">3</span>
                     Día 3: 14 septiembre
                 </h2>
-                <div class="text-gray-700 space-y-2">
-                    <p><i data-lucide="droplet" class="icon activity-icon"></i> Urridafoss, Gluggafoss</p>
-                    <p><i data-lucide="droplet" class="icon activity-icon"></i> Seljalandsfoss y Gljúfrabúi (1h)</p>
-                    <p><i data-lucide="droplet" class="icon activity-icon"></i> Skógafoss (45 min)</p>
-                    <p><i data-lucide="snowflake" class="icon activity-icon"></i> Solheimajökull (trek ligero opcional)</p>
-                    <p><i data-lucide="eye" class="icon activity-icon"></i> Dyrhólaey (mirador)</p>
-                    <p><i data-lucide="waves" class="icon activity-icon"></i> Reynisfjara</p>
-                    <p><i data-lucide="mountain" class="icon activity-icon"></i> Fjaðrárgljúfur (solo si hay tiempo)</p>
-                    <p><i data-lucide="bed" class="icon activity-icon"></i> Cena y noche en Vík.</p>
+                <div class="text-gray-700 space-y-2 text-sm sm:text-base">
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="droplet" class="icon activity-icon"></i> <span>Urridafoss <i class="fa-solid fa-circle-xmark" style="color: #f70202;"></i></span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="droplet" class="icon activity-icon"></i> <span>Gluggafoss</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="droplet" class="icon activity-icon"></i> <span>Seljalandsfoss y Gljúfrabúi (1h)</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="bath" class="icon activity-icon"></i> <span>Termas Seljavallalaug (No muy calientes) <i class="fa-solid fa-circle-xmark" style="color: #f70202;"></i></span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="droplet" class="icon activity-icon"></i> <span>Skógafoss (45 min)</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="footprints" class="icon activity-icon"></i> <span>Skógafoss Trekking a Skalabrekufoss (2h)</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="snowflake" class="icon activity-icon"></i> <span>Solheimajökull (trek ligero opcional) <i class="fa-solid fa-circle-xmark" style="color: #f70202;"></i></span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="eye" class="icon activity-icon"></i> <span>Dyrhólaey (mirador)</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="waves" class="icon activity-icon"></i> <span>Reynisfjara</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="mountain" class="icon activity-icon"></i> <span>Fjaðrárgljúfur (solo si hay tiempo)</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="utensils" class="icon activity-icon"></i> <span>Cena en Vík.</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="bed" class="icon activity-icon"></i> <span>Noche en Vík.</span>
+                    </p>
                 </div>
                 <div class="mt-4 p-3 bg-orange-100 rounded-lg flex items-center">
-                    <i data-lucide="sparkles" class="icon aurora-icon w-6 h-6"></i>
-                    <p class="text-orange-800 font-semibold text-sm">Auroras: Miradores de Dyrhólaey o playas negras de Reynisfjara (zona muy oscura)</p>
+                    <i data-lucide="sparkles" class="icon aurora-icon w-5 h-5 sm:w-6 sm:h-6"></i>
+                    <p class="text-orange-800 font-semibold text-xs sm:text-sm">Auroras: Miradores de Dyrhólaey o playas negras de Reynisfjara (zona muy oscura)</p>
                 </div>
-                <img src="https://placehold.co/400x200/FFCCBC/D84315?text=Playas+Negras+de+Vík" alt="Imagen de las Playas Negras de Vík" class="mt-4 w-full h-48 object-cover rounded-lg">
+                <img src="https://placehold.co/400x200/FFCCBC/D84315?text=Playas+Negras+de+Vík" alt="Imagen de las Playas Negras de Vík" class="mt-4 w-full h-40 sm:h-48 object-cover rounded-lg">
             </div>
 
-            <!-- Day 4 -->
             <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl shadow-md border border-purple-100">
-                <h2 class="text-2xl font-bold text-pink-700 mb-3 flex items-center">
-                    <span class="bg-pink-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-lg">4</span>
+                <h2 class="text-xl sm:text-2xl font-bold text-pink-700 mb-3 flex items-center">
+                    <span class="bg-pink-500 text-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mr-3 text-base sm:text-lg">4</span>
                     Día 4: 15 septiembre
                 </h2>
-                <div class="text-gray-700 space-y-2">
-                    <p><i data-lucide="map" class="icon activity-icon"></i> Parque Nacional Skaftafell + cascada Svartifoss (2-3h)</p>
-                    <p><i data-lucide="snowflake" class="icon activity-icon"></i> Lengua glaciar (excursión opcional guiada o libre)</p>
-                    <p><i data-lucide="circle" class="icon activity-icon"></i> Lago Fjallsárlón</p>
-                    <p><i data-lucide="gem" class="icon activity-icon"></i> Jökulsárlón + Diamond Beach</p>
-                    <p><i data-lucide="castle" class="icon activity-icon"></i> Playa de Stokksnes + Pueblo Vikingo</p>
-                    <p><i data-lucide="utensils" class="icon activity-icon"></i> Cena en Höfn.</p>
-                    <p><i data-lucide="bed" class="icon activity-icon"></i> Noche en Höfn??.</p>
+                <div class="text-gray-700 space-y-2 text-sm sm:text-base">
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="map" class="icon activity-icon"></i> <span>Parque Nacional Skaftafell + cascada Svartifoss (2-3h)</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="snowflake" class="icon activity-icon"></i> <span>Lengua glaciar (excursión opcional guiada o libre)</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="circle" class="icon activity-icon"></i> <span>Lago Fjallsárlón</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="ship" class="icon activity-icon"></i> <span>Zodiac en Fjallsárlón (OPCIONAL)</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="gem" class="icon activity-icon"></i> <span>Diamond Beach</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="circle" class="icon activity-icon"></i> <span>Jökulsárlón (Laguna Glaciar)</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="castle" class="icon activity-icon"></i> <span>Playa de Stokksnes + Pueblo Vikingo <i class="fa-solid fa-circle-xmark" style="color: #f70202;"></i></span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="utensils" class="icon activity-icon"></i> <span>Cena en Höfn.</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="bed" class="icon activity-icon"></i> <span>Noche en Höfn??.</span>
+                    </p>
                 </div>
                 <div class="mt-4 p-3 bg-pink-100 rounded-lg flex items-center">
-                    <i data-lucide="sparkles" class="icon aurora-icon w-6 h-6"></i>
-                    <p class="text-pink-800 font-semibold text-sm">Auroras: Jökulsárlón / Diamond Beach o Stokksnes, muy recomendados</p>
+                    <i data-lucide="sparkles" class="icon aurora-icon w-5 h-5 sm:w-6 sm:h-6"></i>
+                    <p class="text-pink-800 font-semibold text-xs sm:text-sm">Auroras: Jökulsárlón / Diamond Beach o Stokksnes, muy recomendados</p>
                 </div>
-                <img src="https://placehold.co/400x200/E1BEE7/6A1B9A?text=Jökulsárlón+y+Diamond+Beach" alt="Imagen de Jökulsárlón y Diamond Beach" class="mt-4 w-full h-48 object-cover rounded-lg">
+                <img src="https://placehold.co/400x200/E1BEE7/6A1B9A?text=Jökulsárlón+y+Diamond+Beach" alt="Imagen de Jökulsárlón y Diamond Beach" class="mt-4 w-full h-40 sm:h-48 object-cover rounded-lg">
             </div>
 
-            <!-- Day 5 -->
             <div class="bg-gradient-to-br from-red-50 to-rose-50 p-6 rounded-xl shadow-md border border-red-100">
-                <h2 class="text-2xl font-bold text-rose-700 mb-3 flex items-center">
-                    <span class="bg-rose-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-lg">5</span>
+                <h2 class="text-xl sm:text-2xl font-bold text-rose-700 mb-3 flex items-center">
+                    <span class="bg-rose-500 text-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mr-3 text-base sm:text-lg">5</span>
                     Día 5: 16 septiembre
                 </h2>
-                <div class="text-gray-700 space-y-2">
-                    <p><i data-lucide="droplet" class="icon activity-icon"></i> Fardagafoss</p>
-                    <p><i data-lucide="building" class="icon activity-icon"></i> Pueblo de Seyðisfjörður (panorámicas)</p>
-                    <p><i data-lucide="shopping-bag" class="icon activity-icon"></i> Bonus en Egilsstaðir</p>
-                    <p><i data-lucide="droplet" class="icon activity-icon"></i> Hengifoss (trek 1.5h total)</p>
-                    <p><i data-lucide="split" class="icon activity-icon"></i> Cañón Stuðlagil</p>
-                    <p><i data-lucide="droplet" class="icon activity-icon"></i> Dettifoss</p>
-                    <p><i data-lucide="bed" class="icon activity-icon"></i> Noche en zona remota entre Egilsstaðir y el norte.</p>
+                <div class="text-gray-700 space-y-2 text-sm sm:text-base">
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="droplet" class="icon activity-icon"></i> <span>Fardagafoss</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="building" class="icon activity-icon"></i> <span>Pueblo de Seyðisfjörður (panorámicas)</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="shopping-bag" class="icon activity-icon"></i> <span>Bonus Compra en Egilsstaðir</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="droplet" class="icon activity-icon"></i> <span>Hengifoss (trek 1.5h total)</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="split" class="icon activity-icon"></i> <span>Cañón Stuðlagil</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="droplet" class="icon activity-icon"></i> <span>Dettifoss</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="droplet" class="icon activity-icon"></i> <span>Selfoss <i class="fa-solid fa-circle-xmark" style="color: #f70202;"></i> (Elegir 1)</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="droplet" class="icon activity-icon"></i> <span>Hafralgifoss <i class="fa-solid fa-circle-xmark" style="color: #f70202;"></i> (Si No da tiempo hoy ¿mañana?)</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="bed" class="icon activity-icon"></i> <span>Noche en zona remota entre Egilsstaðir y el norte.</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="utensils" class="icon activity-icon"></i> <span>Cena en Hostel (Compra super).</span>
+                    </p>
                 </div>
                 <div class="mt-4 p-3 bg-rose-100 rounded-lg flex items-center">
-                    <i data-lucide="sparkles" class="icon aurora-icon w-6 h-6"></i>
-                    <p class="text-rose-800 font-semibold text-sm">Auroras: Zona rural en el este, ideal por su oscuridad y baja contaminación lumínica</p>
+                    <i data-lucide="sparkles" class="icon aurora-icon w-5 h-5 sm:w-6 sm:h-6"></i>
+                    <p class="text-rose-800 font-semibold text-xs sm:text-sm">Auroras: Zona rural en el este, ideal por su oscuridad y baja contaminación lumínica</p>
                 </div>
-                <img src="https://placehold.co/400x200/FFCDD2/C62828?text=Seyðisfjörður+y+Stuðlagil" alt="Imagen de Seyðisfjörður y Stuðlagil" class="mt-4 w-full h-48 object-cover rounded-lg">
+                <img src="https://placehold.co/400x200/FFCDD2/C62828?text=Seyðisfjörður+y+Stuðlagil" alt="Imagen de Seyðisfjörður y Stuðlagil" class="mt-4 w-full h-40 sm:h-48 object-cover rounded-lg">
             </div>
 
-            <!-- Day 6 -->
             <div class="bg-gradient-to-br from-cyan-50 to-blue-50 p-6 rounded-xl shadow-md border border-cyan-100">
-                <h2 class="text-2xl font-bold text-blue-700 mb-3 flex items-center">
-                    <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-lg">6</span>
+                <h2 class="text-xl sm:text-2xl font-bold text-blue-700 mb-3 flex items-center">
+                    <span class="bg-blue-500 text-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mr-3 text-base sm:text-lg">6</span>
                     Día 6: 17 septiembre
                 </h2>
-                <div class="text-gray-700 space-y-2">
-                    <p><i data-lucide="thermometer" class="icon activity-icon"></i> Zona geotérmica Hverir</p>
-                    <p><i data-lucide="box" class="icon activity-icon"></i> Cueva Grjótagjá</p>
-                    <p><i data-lucide="mountain" class="icon activity-icon"></i> Cráter Hverfjall (trail corto)</p>
-                    <p><i data-lucide="circle" class="icon activity-icon"></i> Skútustaðagígar</p>
-                    <p><i data-lucide="droplet" class="icon activity-icon"></i> Cascada Goðafoss</p>
-                    <p><i data-lucide="bath" class="icon activity-icon"></i> Forest Lagoon en Akureyri</p>
-                    <p><i data-lucide="bed" class="icon activity-icon"></i> Check-in y paseo por Akureyri.</p>
+                <div class="text-gray-700 space-y-2 text-sm sm:text-base">
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="thermometer" class="icon activity-icon"></i> <span>Zona geotérmica Hverir</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="box" class="icon activity-icon"></i> <span>Cueva Grjótagjá</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="mountain" class="icon activity-icon"></i> <span>Cráter Hverfjall (trail corto)</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="circle" class="icon activity-icon"></i> <span>Skútustaðagígar</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="droplet" class="icon activity-icon"></i> <span>Cascada Goðafoss</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="bath" class="icon activity-icon"></i> <span>Forest Lagoon en Akureyri</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="bed" class="icon activity-icon"></i> <span>Check-in y paseo por Akureyri.</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="utensils" class="icon activity-icon"></i> <span>Cena en Akureyri.</span>
+                    </p>
                 </div>
                 <div class="mt-4 p-3 bg-blue-100 rounded-lg flex items-center">
-                    <i data-lucide="sparkles" class="icon aurora-icon w-6 h-6"></i>
-                    <p class="text-blue-800 font-semibold text-sm">Auroras: Zona de lago Mývatn o alrededores de Goðafoss</p>
+                    <i data-lucide="sparkles" class="icon aurora-icon w-5 h-5 sm:w-6 sm:h-6"></i>
+                    <p class="text-blue-800 font-semibold text-xs sm:text-sm">Auroras: Zona de lago Mývatn o alrededores de Goðafoss</p>
                 </div>
-                <img src="https://placehold.co/400x200/BBDEFB/1976D2?text=Lago+Mývatn+y+Goðafoss" alt="Imagen del Lago Mývatn y Goðafoss" class="mt-4 w-full h-48 object-cover rounded-lg">
+                <img src="https://placehold.co/400x200/BBDEFB/1976D2?text=Lago+Mývatn+y+Goðafoss" alt="Imagen del Lago Mývatn y Goðafoss" class="mt-4 w-full h-40 sm:h-48 object-cover rounded-lg">
             </div>
 
-            <!-- Day 7 -->
             <div class="bg-gradient-to-br from-lime-50 to-emerald-50 p-6 rounded-xl shadow-md border border-lime-100">
-                <h2 class="text-2xl font-bold text-emerald-700 mb-3 flex items-center">
-                    <span class="bg-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-lg">7</span>
+                <h2 class="text-xl sm:text-2xl font-bold text-emerald-700 mb-3 flex items-center">
+                    <span class="bg-emerald-500 text-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mr-3 text-base sm:text-lg">7</span>
                     Día 7: 18 septiembre
                 </h2>
-                <div class="text-gray-700 space-y-2">
-                    <p><i data-lucide="fish" class="icon activity-icon"></i> Excursión avistamiento de ballenas (Hauganes recomendado)</p>
-                    <p><i data-lucide="rocking-chair" class="icon activity-icon"></i> Hvitserkur (formación de basalto)</p>
-                    <p><i data-lucide="split" class="icon activity-icon"></i> Cañón Kolugljúfur</p>
-                    <p><i data-lucide="bed" class="icon activity-icon"></i> Noche en Budardalur.</p>
+                <div class="text-gray-700 space-y-2 text-sm sm:text-base">
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="fish" class="icon activity-icon text-sm"
+                        ></i> <span>Excursión avistamiento de ballenas (Hauganes recomendado)</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="rocking-chair" class="icon activity-icon"></i> <span>Hvitserkur (formación de basalto)</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="split" class="icon activity-icon"></i> <span>Cañón Kolugljúfur</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="bed" class="icon activity-icon"></i> <span>Noche en Budardalur.</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="utensils" class="icon activity-icon"></i> <span>Cena en Zona.</span>
+                    </p>
                 </div>
                 <div class="mt-4 p-3 bg-emerald-100 rounded-lg flex items-center">
-                    <i data-lucide="sparkles" class="icon aurora-icon w-6 h-6"></i>
-                    <p class="text-emerald-800 font-semibold text-sm">Auroras: Hvitserkur o costa entre Blönduós y Laugarbakki (muy oscuros)</p>
+                    <i data-lucide="sparkles" class="icon aurora-icon w-5 h-5 sm:w-6 sm:h-6"></i>
+                    <p class="text-emerald-800 font-semibold text-xs sm:text-sm">Auroras: Hvitserkur o costa entre Blönduós y Laugarbakki (muy oscuros)</p>
                 </div>
-                <img src="https://placehold.co/400x200/DCEDC8/558B2F?text=Hvitserkur+y+Ballenas" alt="Imagen de Hvitserkur y Avistamiento de Ballenas" class="mt-4 w-full h-48 object-cover rounded-lg">
+                <img src="https://placehold.co/400x200/DCEDC8/558B2F?text=Hvitserkur+y+Ballenas" alt="Imagen de Hvitserkur y Avistamiento de Ballenas" class="mt-4 w-full h-40 sm:h-48 object-cover rounded-lg">
             </div>
 
-            <!-- Day 8 -->
             <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-6 rounded-xl shadow-md border border-amber-100">
-                <h2 class="text-2xl font-bold text-yellow-700 mb-3 flex items-center">
-                    <span class="bg-yellow-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-lg">8</span>
+                <h2 class="text-xl sm:text-2xl font-bold text-yellow-700 mb-3 flex items-center">
+                    <span class="bg-yellow-500 text-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mr-3 text-base sm:text-lg">8</span>
                     Día 8: 19 septiembre
                 </h2>
-                <div class="text-gray-700 space-y-2">
-                    <p><i data-lucide="map-pin" class="icon activity-icon"></i> Recorrido por península de Snæfellsnes:</p>
-                    <ul class="list-disc list-inside ml-6 text-sm">
-                        <li><i data-lucide="fish" class="icon activity-icon text-sm"></i> Ytri-Tunga (focas)</li>
-                        <li><i data-lucide="droplet" class="icon activity-icon"></i> Bjarnafoss</li>
-                        <li><i data-lucide="church" class="icon activity-icon text-sm"></i> Búðakirkja</li>
-                        <li><i data-lucide="mountain" class="icon activity-icon text-sm"></i> Raudfeldsgjá</li>
-                        <li><i data-lucide="waves" class="icon activity-icon text-sm"></i> Hellnar y Arnarstapi</li>
-                        <li><i data-lucide="rocking-chair" class="icon activity-icon text-sm"></i> Londrangar</li>
-                        <li><i data-lucide="tower-control" class="icon activity-icon text-sm"></i> Malarrif Lighthouse</li>
-                        <li><i data-lucide="waves" class="icon activity-icon text-sm"></i> Djúpalónssandur</li>
-                        <li><i data-lucide="mountain" class="icon activity-icon text-sm"></i> Saxhóll</li>
-                        <li><i data-lucide="compass" class="icon activity-icon text-sm"></i> Öndverðarnes</li>
-                        <li><i data-lucide="house" class="icon activity-icon text-sm"></i> Ólafsvík</li>
-                        <li><i data-lucide="mountain" class="icon activity-icon text-sm"></i> Kirkjufell y Grundarfoss</li>
+                <div class="text-gray-700 space-y-2 text-sm sm:text-base">
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="map-pin" class="icon activity-icon"></i> <span>Recorrido por península de Snæfellsnes:</span>
+                    </p>
+                    <ul class="list-none list-inside ml-4 sm:ml-6 text-xs sm:text-sm space-y-1">
+                        <li class="activity-item">
+                            <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                            <i data-lucide="fish" class="icon activity-icon text-sm"></i> <span>Ytri-Tunga (focas)</span>
+                        </li>
+                        <li class="activity-item">
+                            <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                            <i data-lucide="droplet" class="icon activity-icon"></i> <span>Bjarnafoss</span>
+                        </li>
+                        <li class="activity-item">
+                            <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                            <i data-lucide="church" class="icon activity-icon text-sm"></i> <span>Búðakirkja</span>
+                        </li>
+                        <li class="activity-item">
+                            <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                            <i data-lucide="mountain" class="icon activity-icon text-sm"></i> <span>Raudfeldsgjá</span>
+                        </li>
+                        <li class="activity-item">
+                            <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                            <i data-lucide="waves" class="icon activity-icon text-sm"></i> <span>Hellnar y Arnarstapi</span>
+                        </li>
+                        <li class="activity-item">
+                            <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                            <i data-lucide="rocking-chair" class="icon activity-icon text-sm"></i> <span>Londrangar</span>
+                        </li>
+                        <li class="activity-item">
+                            <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                            <i data-lucide="tower-control" class="icon activity-icon text-sm"></i> <span>Malarrif Lighthouse</span>
+                        </li>
+                        <li class="activity-item">
+                            <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                            <i data-lucide="waves" class="icon activity-icon text-sm"></i> <span>Djúpalónssandur</span>
+                        </li>
+                        <li class="activity-item">
+                            <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                            <i data-lucide="mountain" class="icon activity-icon text-sm"></i> <span>Saxhóll</span>
+                        </li>
+                        <li class="activity-item">
+                            <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                            <i data-lucide="compass" class="icon activity-icon text-sm"></i> <span>Öndverðarnes</span>
+                        </li>
+                        <li class="activity-item">
+                            <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                            <i data-lucide="house" class="icon activity-icon text-sm"></i> <span>Ólafsvík</span>
+                        </li>
+                        <li class="activity-item">
+                            <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                            <i data-lucide="mountain" class="icon activity-icon text-sm"></i> <span>Kirkjufell y Grundarfoss</span>
+                        </li>
                     </ul>
-                    <p><i data-lucide="utensils" class="icon activity-icon"></i> Cena en zona.</p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="utensils" class="icon activity-icon"></i> <span>Cena en zona.</span>
+                    </p>
                 </div>
                 <div class="mt-4 p-3 bg-yellow-100 rounded-lg flex items-center">
-                    <i data-lucide="sparkles" class="icon aurora-icon w-6 h-6"></i>
-                    <p class="text-yellow-800 font-semibold text-sm">Auroras: Kirkjufell (uno de los mejores puntos de auroras si está despejado)</p>
+                    <i data-lucide="sparkles" class="icon aurora-icon w-5 h-5 sm:w-6 sm:h-6"></i>
+                    <p class="text-yellow-800 font-semibold text-xs sm:text-sm">Auroras: Kirkjufell (uno de los mejores puntos de auroras si está despejado)</p>
                 </div>
-                <img src="https://placehold.co/400x200/FFF9C4/FBC02D?text=Península+de+Snæfellsnes" alt="Imagen de la Península de Snæfellsnes" class="mt-4 w-full h-48 object-cover rounded-lg">
+                <img src="https://placehold.co/400x200/FFF9C4/FBC02D?text=Península+de+Snæfellsnes" alt="Imagen de la Península de Snæfellsnes" class="mt-4 w-full h-40 sm:h-48 object-cover rounded-lg">
             </div>
 
-            <!-- Day 9 -->
             <div class="bg-gradient-to-br from-gray-50 to-slate-50 p-6 rounded-xl shadow-md border border-gray-100">
-                <h2 class="text-2xl font-bold text-slate-700 mb-3 flex items-center">
-                    <span class="bg-slate-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-lg">9</span>
+                <h2 class="text-xl sm:text-2xl font-bold text-slate-700 mb-3 flex items-center">
+                    <span class="bg-slate-500 text-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mr-3 text-base sm:text-lg">9</span>
                     Día 9: 20 septiembre
                 </h2>
-                <div class="text-gray-700 space-y-2">
-                    <p><i data-lucide="mountain" class="icon activity-icon"></i> Trekking a la cascada Glymur (3h con picnic)</p>
-                    <p><i data-lucide="bath" class="icon activity-icon"></i> Hvammsvík Hot Springs</p>
-                    <p><i data-lucide="car" class="icon activity-icon"></i> Regreso a Reikiavik</p>
-                    <p><i data-lucide="key-round" class="icon activity-icon"></i> Devolución del coche</p>
-                    <p><i data-lucide="party-popper" class="icon activity-icon"></i> Cena grupal de despedida.</p>
+                <div class="text-gray-700 space-y-2 text-sm sm:text-base">
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="mountain" class="icon activity-icon"></i> <span>Trekking a la cascada Glymur (3h con picnic)</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="bath" class="icon activity-icon"></i> <span>Hvammsvík Hot Springs</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="car" class="icon activity-icon"></i> <span>Regreso a Reikiavik</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="key-round" class="icon activity-icon"></i> <span>Devolución del coche</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="party-popper" class="icon activity-icon"></i> <span>Cena grupal de despedida en Reikiavik.</span>
+                    </p>
                 </div>
                 <div class="mt-4 p-3 bg-slate-100 rounded-lg flex items-center">
-                    <i data-lucide="sparkles" class="icon aurora-icon w-6 h-6"></i>
-                    <p class="text-slate-800 font-semibold text-sm">Auroras: Hvammsvík o cerca de Glymur antes de entrar a Reikiavik</p>
+                    <i data-lucide="sparkles" class="icon aurora-icon w-5 h-5 sm:w-6 sm:h-6"></i>
+                    <p class="text-slate-800 font-semibold text-xs sm:text-sm">Auroras: Hvammsvík o cerca de Glymur antes de entrar a Reikiavik</p>
                 </div>
-                <img src="https://placehold.co/400x200/CFD8DC/455A64?text=Reikiavik+y+Glymur" alt="Imagen de Reikiavik y Glymur" class="mt-4 w-full h-48 object-cover rounded-lg">
+                <img src="https://placehold.co/400x200/CFD8DC/455A64?text=Reikiavik+y+Glymur" alt="Imagen de Reikiavik y Glymur" class="mt-4 w-full h-40 sm:h-48 object-cover rounded-lg">
             </div>
 
-            <!-- Day 10 -->
             <div class="bg-gradient-to-br from-neutral-50 to-zinc-50 p-6 rounded-xl shadow-md border border-neutral-100">
-                <h2 class="text-2xl font-bold text-zinc-700 mb-3 flex items-center">
-                    <span class="bg-zinc-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-lg">10</span>
+                <h2 class="text-xl sm:text-2xl font-bold text-zinc-700 mb-3 flex items-center">
+                    <span class="bg-zinc-500 text-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mr-3 text-base sm:text-lg">10</span>
                     Día 10: 21 septiembre
                 </h2>
-                <div class="text-gray-700 space-y-2">
-                    <p><i data-lucide="coffee" class="icon activity-icon"></i> Desayuno</p>
-                    <p><i data-lucide="plane" class="icon activity-icon"></i> Traslado al aeropuerto y regreso a casa.</p>
+                <div class="text-gray-700 space-y-2 text-sm sm:text-base">
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="coffee" class="icon activity-icon"></i> <span>Desayuno</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="bus" class="icon activity-icon"></i> <span>Traslado al aeropuerto</span>
+                    </p>
+                    <p class="activity-item">
+                        <input type="checkbox" class="h-4 w-4 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 mt-1">
+                        <i data-lucide="plane" class="icon activity-icon"></i> <span>Vuelo de regreso a casa.</span>
+                    </p>
                 </div>
                 <div class="mt-4 p-3 bg-zinc-100 rounded-lg flex items-center">
-                    <i data-lucide="sparkles" class="icon aurora-icon w-6 h-6"></i>
-                    <p class="text-zinc-800 font-semibold text-sm">Auroras: —</p>
+                    <i data-lucide="sparkles" class="icon aurora-icon w-5 h-5 sm:w-6 sm:h-6"></i>
+                    <p class="text-zinc-800 font-semibold text-xs sm:text-sm">Gracias: Equipo!!!! </p>
                 </div>
-                <img src="https://placehold.co/400x200/F5F5F5/616161?text=Aeropuerto+Keflavík" alt="Imagen del Aeropuerto de Keflavík" class="mt-4 w-full h-48 object-cover rounded-lg">
+                <img src="https://placehold.co/400x200/F5F5F5/616161?text=Aeropuerto+Keflavík" alt="Imagen del Aeropuerto de Keflavík" class="mt-4 w-full h-40 sm:h-48 object-cover rounded-lg">
             </div>
 
         </div>
 
-        <!-- Final Tips Section -->
-        <section class="mt-12 bg-gray-50 p-6 rounded-xl shadow-inner border border-gray-200">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
-                <i data-lucide="lightbulb" class="icon tip-icon w-8 h-8 inline-block align-middle mr-3"></i>
+        <section class="mt-10 md:mt-12 bg-gray-50 p-6 rounded-xl shadow-inner border border-gray-200">
+            <h2 class="text-2xl sm:text-3xl xl:text-4xl font-bold text-gray-800 mb-6 flex items-center">
+                <i data-lucide="lightbulb" class="icon tip-icon w-7 h-7 sm:w-8 sm:h-8 xl:w-9 xl:h-9 inline-block align-middle mr-3"></i>
                 🧊 Consejos finales
             </h2>
-            <div class="text-gray-700 space-y-4">
+            <div class="text-gray-700 space-y-3 sm:space-y-4 text-sm sm:text-base xl:text-lg">
                 <p class="flex items-start">
                     <i data-lucide="sparkles" class="icon aurora-icon mt-1"></i>
                     <span class="ml-2">
@@ -341,7 +600,6 @@
 
     </div>
 
-    <!-- Script to create Lucide icons -->
     <script>
         lucide.createIcons();
     </script>
